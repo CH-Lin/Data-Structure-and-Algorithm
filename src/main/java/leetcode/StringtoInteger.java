@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package leetcode;
 
 public class StringtoInteger {
 	public int myAtoi(String str) {

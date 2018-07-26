@@ -29,11 +29,26 @@ public class MergeSort {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public static <T> void sort(T data[], Comparator<? super T> c) {
+		@SuppressWarnings("unchecked")
 		T result[] = (T[]) Array.newInstance(data.getClass().getComponentType(), data.length);
 		sort(data, result, 0, data.length - 1, c);
 		data = result;
 	}
 
+	public static void sort(Integer data[]) {
+		class IntComparator implements Comparator<Integer> {
+			@Override
+			public int compare(Integer d1, Integer d2) {
+				if (d1 < d2)
+					return -1;
+				if (d1 == d2)
+					return 0;
+				return 1;
+			}
+		}
+		Integer result[] = (Integer[]) Array.newInstance(data.getClass().getComponentType(), data.length);
+		sort(data, result, 0, data.length - 1, new IntComparator());
+		data = result;
+	}
 }
