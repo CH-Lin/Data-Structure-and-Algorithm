@@ -10,12 +10,12 @@ public class GeeksTest {
 	public void testFindMedianInAStream() {
 		FindMedianInAStream median = new FindMedianInAStream();
 		median.insert(5);
-		assertEquals("", 5, median.getMedian());
+		assertEquals("", median.getMedian(), 5);
 		median.insert(15);
-		assertEquals("", 10, median.getMedian());
+		assertEquals("", median.getMedian(), 10);
 		median.insert(1);
-		assertEquals("", 5, median.getMedian());
+		assertEquals("", median.getMedian(), 5);
 		median.insert(3);
-		assertEquals("", 4, median.getMedian());
+		assertEquals("", median.getMedian(), 4);
 	}
 }
