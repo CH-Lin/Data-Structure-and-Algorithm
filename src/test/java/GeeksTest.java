@@ -1,6 +1,7 @@
 
 import org.junit.Test;
 
+import geeksforgeeks.BalancedParentheses;
 import geeksforgeeks.FindMedianInAStream;
 
 import static org.junit.Assert.*;
@@ -18,4 +19,15 @@ public class GeeksTest {
 		median.insert(3);
 		assertEquals("", median.getMedian(), 4);
 	}
+
+	@Test
+	public void testBalancedParentheses() {
+		char exp[] = { '{', '(', ')', '}', '[', ']' };
+		BalancedParentheses.areParenthesisBalanced(exp);
+		assertEquals("", true, BalancedParentheses.areParenthesisBalanced(exp));
+		char exp2[] = { '{', '(', ')', '}', '}', '[', ']' };
+		BalancedParentheses.areParenthesisBalanced(exp);
+		assertEquals("", false, BalancedParentheses.areParenthesisBalanced(exp2));
+	}
+
 }

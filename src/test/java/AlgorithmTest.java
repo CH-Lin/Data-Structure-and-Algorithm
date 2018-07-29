@@ -37,11 +37,11 @@ public class AlgorithmTest {
 	public void testKnapsack() {
 		int weights[] = { 4, 5, 2, 1, 6 };
 		int values[] = { 4500, 5700, 2250, 1100, 6700 };
-		assertEquals("", Knapsack.calculate(weights, values, 8), 9050);
+		assertEquals("", 9050, Knapsack.calculate(weights, values, 8));
 
 		KnapsackData data[] = { new KnapsackData(4, 4500), new KnapsackData(5, 5700), new KnapsackData(2, 2250),
 				new KnapsackData(1, 1100), new KnapsackData(6, 6700) };
-		assertEquals("", Knapsack.calculate(data, 8), 9050);
+		assertEquals("", 9050, Knapsack.calculate(data, 8));
 
 	}
 }

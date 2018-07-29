@@ -29,9 +29,9 @@ public class DataStructureTest {
 		queue.enQueue(2);
 		queue.enQueue(10);
 		queue.enQueue(8);
-		assertEquals("", queue.deQueue(), (Integer) 2);
-		assertEquals("", queue.deQueue(), (Integer) 10);
-		assertEquals("", queue.deQueue(), (Integer) 8);
+		assertEquals("", (Integer) 2, queue.deQueue());
+		assertEquals("", (Integer) 10, queue.deQueue());
+		assertEquals("", (Integer) 8, queue.deQueue());
 	}
 
 	@Test
@@ -40,9 +40,9 @@ public class DataStructureTest {
 		heap.insert(5);
 		heap.insert(4);
 		heap.insert(10);
-		assertEquals("", heap.exactMax(), 10);
-		assertEquals("", heap.exactMax(), 5);
-		assertEquals("", heap.exactMax(), 4);
+		assertEquals("", 10, heap.exactMax());
+		assertEquals("", 5, heap.exactMax());
+		assertEquals("", 4, heap.exactMax());
 	}
 
 	@Test
@@ -51,8 +51,8 @@ public class DataStructureTest {
 		heap.insert(5);
 		heap.insert(4);
 		heap.insert(10);
-		assertEquals("", heap.exactMin(), 4);
-		assertEquals("", heap.exactMin(), 5);
-		assertEquals("", heap.exactMin(), 10);
+		assertEquals("", 4, heap.exactMin());
+		assertEquals("", 5, heap.exactMin());
+		assertEquals("", 10, heap.exactMin());
 	}
 }
