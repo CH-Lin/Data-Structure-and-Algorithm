@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import geeksforgeeks.BalancedParentheses;
 import geeksforgeeks.FindMedianInAStream;
+import geeksforgeeks.MergeArray;
 
 import static org.junit.Assert.*;
 
@@ -28,6 +29,15 @@ public class GeeksTest {
 		char exp2[] = { '{', '(', ')', '}', '}', '[', ']' };
 		BalancedParentheses.areParenthesisBalanced(exp);
 		assertEquals("", false, BalancedParentheses.areParenthesisBalanced(exp2));
+	}
+
+	@Test
+	public void testMergeArray() {
+		int A[] = { 2, 8, -1, -1, -1, 13, -1, 15, 20 };
+		int B[] = { 5, 7, 9, 25 };
+		int result[] = { 2, 5, 7, 8, 9, 13, 15, 20, 25 };
+		MergeArray.merge(A, B);
+		assertArrayEquals(result, A);
 	}
 
 }
