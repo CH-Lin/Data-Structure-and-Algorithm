@@ -4,6 +4,10 @@ import java.util.Comparator;
 
 public class QuickSort {
 
+	public void sort(Integer vals[]) {
+		sort(vals, 0, vals.length - 1);
+	}
+
 	public void sort(Integer vals[], int f, int r) {
 		class IntComparator implements Comparator<Integer> {
 			@Override
@@ -16,6 +20,10 @@ public class QuickSort {
 			}
 		}
 		sort(vals, f, r, new IntComparator());
+	}
+
+	public <T> void sort(T vals[], Comparator<? super T> c) {
+		sort(vals, 0, vals.length - 1, c);
 	}
 
 	public <T> void sort(T vals[], int f, int r, Comparator<? super T> c) {
@@ -47,7 +55,7 @@ public class QuickSort {
 
 class QuickSortV2 {
 
-	private static <T> int partition(T data[], int left, int right, Comparator<? super T> c) {
+	private <T> int partition(T data[], int left, int right, Comparator<? super T> c) {
 		int i = left, j = right;
 		T pivot = data[(right + left) / 2], temp;
 		while (i <= j) {
@@ -68,7 +76,7 @@ class QuickSortV2 {
 		return i;
 	}
 
-	public static <T> void sort(T data[], int left, int right, Comparator<? super T> c) {
+	public <T> void sort(T data[], int left, int right, Comparator<? super T> c) {
 		int idx = partition(data, left, right, c);
 		if (left < idx - 1)
 			sort(data, left, idx - 1, c);
@@ -76,7 +84,7 @@ class QuickSortV2 {
 			sort(data, idx, right, c);
 	}
 
-	public static <T> void sort(T data[], Comparator<? super T> c) {
+	public <T> void sort(T data[], Comparator<? super T> c) {
 		sort(data, 0, data.length - 1, c);
 	}
 }
