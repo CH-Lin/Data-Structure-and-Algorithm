@@ -1,6 +1,7 @@
 
 import org.junit.Test;
 
+import geeksforgeeks.AlphanumericPalindrome;
 import geeksforgeeks.BalancedParentheses;
 import geeksforgeeks.FindMedianInAStream;
 import geeksforgeeks.MergeArray;
@@ -38,6 +39,13 @@ public class GeeksTest {
 		int result[] = { 2, 5, 7, 8, 9, 13, 15, 20, 25 };
 		MergeArray.merge(A, B);
 		assertArrayEquals(result, A);
+	}
+
+	@Test
+	public void testAlphanumericPalindrome() {
+		assertEquals("", true, AlphanumericPalindrome.isPalindrome("I am :IronnorI Ma, i"));
+		assertEquals("", true, AlphanumericPalindrome.isPalindrome("Ab?/Ba"));
+		assertEquals("", false, AlphanumericPalindrome.isPalindrome("Ab?/Ca"));
 	}
 
 }
