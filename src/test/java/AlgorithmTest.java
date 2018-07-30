@@ -58,7 +58,16 @@ public class AlgorithmTest {
 
 	@Test
 	public void testKadane() {
+		int result1[] = { 4, -1, 2, 1 };
 		assertEquals("", 6, Kadane.cal(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+		assertArrayEquals(result1, Kadane.cal2(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+
+		int result2[] = { -2 };
 		assertEquals("", -2, Kadane.cal(new int[] { -8, -3, -6, -2, -5, -4 }));
+		assertArrayEquals(result2, Kadane.cal2(new int[] { -8, -3, -6, -2, -5, -4 }));
+
+		int result3[] = { 2, 4, -5, 10 };
+		assertEquals("", 11, Kadane.cal(new int[] { 2, -3, 2, 4, -5, 10, -4 }));
+		assertArrayEquals(result3, Kadane.cal2(new int[] { 2, -3, 2, 4, -5, 10, -4 }));
 	}
 }
