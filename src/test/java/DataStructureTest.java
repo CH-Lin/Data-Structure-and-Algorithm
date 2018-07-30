@@ -6,6 +6,7 @@ import data_structure.MinHeap;
 import data_structure.LinkedList;
 import data_structure.ListNode;
 import data_structure.QueueByStack;
+import data_structure.tree.BinarySearchTree;
 
 import static org.junit.Assert.*;
 
@@ -54,5 +55,21 @@ public class DataStructureTest {
 		assertEquals("", 4, heap.exactMin());
 		assertEquals("", 5, heap.exactMin());
 		assertEquals("", 10, heap.exactMin());
+	}
+
+	@Test
+	public void testBinarySearchTree() {
+		BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+		bst.insert(2);
+		bst.insert(1);
+		bst.insert(3);
+		bst.insert(4);
+		assertEquals("", 2, bst.getMinDepth());
+		assertEquals("", true, bst.search(2));
+		assertEquals("", false, bst.search(5));
+		bst.delete(3);
+		assertEquals("", 2, bst.getMinDepth());
+		bst.delete(4);
+		assertEquals("", 2, bst.getMinDepth());
 	}
 }
