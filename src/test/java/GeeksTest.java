@@ -4,6 +4,7 @@ import org.junit.Test;
 import geeksforgeeks.AlphanumericPalindrome;
 import geeksforgeeks.BalancedParentheses;
 import geeksforgeeks.FindMedianInAStream;
+import geeksforgeeks.FindtheMissingNumber;
 import geeksforgeeks.MergeArray;
 
 import static org.junit.Assert.*;
@@ -46,6 +47,11 @@ public class GeeksTest {
 		assertEquals("", true, AlphanumericPalindrome.isPalindrome("I am :IronnorI Ma, i"));
 		assertEquals("", true, AlphanumericPalindrome.isPalindrome("Ab?/Ba"));
 		assertEquals("", false, AlphanumericPalindrome.isPalindrome("Ab?/Ca"));
+	}
+
+	@Test
+	public void testFindtheMissingNumber() {
+		assertEquals("", 5, FindtheMissingNumber.find(new int[] { 1, 2, 4, 6, 3, 7, 8 }));
 	}
 
 }
